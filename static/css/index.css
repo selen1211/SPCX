@@ -1,0 +1,367 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --ink: #000000;
+    --void: #06080c;
+    --carbon: #0d1117;
+    --steel: #1a1d22;
+    --frost: #c7d2e0;
+    --cool: #eef2f7;
+    --ice: #6cc4ff;
+    --ice-deep: #2a8fd6;
+    --ember: #ff7a1a;
+    --ember-bright: #ffb46b;
+    --thrust: #fff1d6;
+}
+
+html, body, #root {
+    height: 100%;
+    background: #000;
+}
+
+body {
+    margin: 0;
+    color: var(--cool);
+    background: #000;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: #ffffff;
+    color: #000;
+}
+
+.font-display {
+    font-family: "Inter", system-ui, sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.font-mono {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ============ SPCX DISPLAY HEADLINE ============ */
+.dragon-headline {
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+    color: #ffffff;
+    text-shadow: 0 0 60px rgba(255, 255, 255, 0.08);
+}
+
+.dragon-headline.ember {
+    color: #ffffff;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+}
+
+/* ============ HAIRLINE & DIVIDERS ============ */
+.hairline {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(199,210,224,0.28), transparent);
+}
+
+.v-hairline {
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(199,210,224,0.28), transparent);
+}
+
+.bracket-l, .bracket-r {
+    position: relative;
+}
+.bracket-l::before, .bracket-r::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgba(199,210,224,0.4);
+    transform: translateY(-50%);
+}
+.bracket-l::before { left: -22px; border-right: none; border-top: none; }
+.bracket-r::after { right: -22px; border-left: none; border-bottom: none; }
+
+/* ============ NOISE / GRAIN ============ */
+.grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    z-index: 60;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ============ SCAN LINE ============ */
+.scanlines::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.012) 0px,
+        rgba(255,255,255,0.012) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+/* ============ GLASS PANEL ============ */
+.glass {
+    background: linear-gradient(180deg, rgba(13,17,23,0.55), rgba(6,8,12,0.55));
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid rgba(199,210,224,0.10);
+}
+
+/* ============ BUTTON: BUY (EMBER) ============ */
+.btn-launch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 26px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 0;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    box-shadow:
+        0 10px 30px -10px rgba(255,255,255,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+}
+.btn-launch:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 18px 50px -10px rgba(255,255,255,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    background: #f5f5f5;
+}
+.btn-launch::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.45) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 0.7s ease;
+}
+.btn-launch:hover::after {
+    transform: translateX(120%);
+}
+
+/* ============ BUTTON: GHOST ============ */
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--cool);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(199,210,224,0.22);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.btn-ghost:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(199,210,224,0.5);
+    color: #fff;
+}
+
+/* ============ CA CHIP ============ */
+.ca-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(199,210,224,0.14);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    color: rgba(199,210,224,0.8);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.ca-chip:hover {
+    border-color: rgba(108,196,255,0.5);
+    color: #fff;
+    background: rgba(108,196,255,0.06);
+}
+
+/* ============ HUD LABEL ============ */
+.hud-label {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(199,210,224,0.55);
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes float-hover {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(0.3deg); }
+}
+.float-hover { animation: float-hover 7s ease-in-out infinite; }
+
+@keyframes pulse-ember {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.0); }
+    50% { box-shadow: 0 0 30px 4px rgba(255,255,255,0.18); }
+}
+.pulse-ember { animation: pulse-ember 2.6s ease-in-out infinite; }
+
+@keyframes blink-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
+}
+.blink-dot { animation: blink-dot 1.6s ease-in-out infinite; }
+
+@keyframes drift-vertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-40px); }
+}
+
+@keyframes flame-flicker {
+    0%, 100% { transform: scaleY(1) scaleX(1); opacity: 0.95; }
+    50% { transform: scaleY(1.15) scaleX(0.92); opacity: 1; }
+}
+.flame-flicker { animation: flame-flicker 0.12s steps(2) infinite; transform-origin: top center; }
+
+@keyframes rumble {
+    0%, 100% { transform: translate(0,0); }
+    25% { transform: translate(-1px, 1px); }
+    50% { transform: translate(1px, -1px); }
+    75% { transform: translate(-1px, -1px); }
+}
+.rumble { animation: rumble 0.06s linear infinite; }
+
+@keyframes ascend {
+    0%   { transform: translateY(0); }
+    20%  { transform: translateY(-8px); }
+    100% { transform: translateY(-110vh); }
+}
+
+@keyframes smoke-grow {
+    0% { transform: scale(0.2); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { animation: fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes reveal-mask {
+    from { clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(0 0 0 0); }
+}
+.reveal-mask { animation: reveal-mask 1.2s cubic-bezier(0.7, 0, 0.3, 1) both; }
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 30s linear infinite; }
+
+/* Stagger helpers */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.25s; }
+.delay-300 { animation-delay: 0.4s; }
+.delay-400 { animation-delay: 0.55s; }
+.delay-500 { animation-delay: 0.7s; }
+.delay-700 { animation-delay: 0.95s; }
+.delay-900 { animation-delay: 1.2s; }
+
+/* ============ CORNER TICKS ============ */
+.corner-ticks {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.corner-ticks span {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgba(199,210,224,0.35);
+}
+.corner-ticks span:nth-child(1) { top: 0; left: 0; border-right: none; border-bottom: none; }
+.corner-ticks span:nth-child(2) { top: 0; right: 0; border-left: none; border-bottom: none; }
+.corner-ticks span:nth-child(3) { bottom: 0; left: 0; border-right: none; border-top: none; }
+.corner-ticks span:nth-child(4) { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+/* ============ MARQUEE ============ */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+.marquee-track {
+    display: inline-flex;
+    animation: marquee 38s linear infinite;
+}
+
+/* ============ HUD CROSSHAIR ============ */
+.crosshair {
+    pointer-events: none;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 1px dashed rgba(108,196,255,0.25);
+    border-radius: 50%;
+}
+.crosshair::before, .crosshair::after {
+    content: "";
+    position: absolute;
+    background: rgba(108,196,255,0.3);
+}
+.crosshair::before { left: 50%; top: -20px; width: 1px; height: 160px; transform: translateX(-50%); }
+.crosshair::after { top: 50%; left: -20px; height: 1px; width: 160px; transform: translateY(-50%); }
+
+/* ============ SCROLL ============ */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #06080c; }
+::-webkit-scrollbar-thumb { background: #1a1d22; }
+::-webkit-scrollbar-thumb:hover { background: #2a2f36; }
+
+/* ============ Hide injected emergent badge ============ */
+#emergent-badge,
+a[href*="emergent.sh"],
+a[href*="emergent.com"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    left: -99999px !important;
+}
+
+/* ============ Layout debug wrapper override ============ */
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}
