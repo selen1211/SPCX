@@ -17032,7 +17032,7 @@
       ca: Sn,
       buyUrl: "https://app.uniswap.org/#/swap?inputCurrency=eth&outputCurrency=0xcomingsoon",
       xUrl: "https://x.com/spcx_erc",
-      tgURL : "https://t.me/spcx_erc",
+      tgURL : "https://t.me/spcx_portal",
       ticker: "SPCX",
       fullName: "SpaceExplorationTechnologiesCorp",
       displayName: "Space Exploration Technologies Corp",
