@@ -3,7 +3,7 @@ const CA = "0x3821ee8f32f4e2e5e87f76e145e100352a291110";
 export const SPCX_CONFIG = {
     ca: CA,
     buyUrl: `https://app.uniswap.org/#/swap?inputCurrency=eth&outputCurrency=0x3821ee8f32f4e2e5e87f76e145e100352a291110`,
-    xUrl: "https://x.com/spcx_erc",
+    xUrl: "https://x.com/spcx_erc20",
     ticker: "SPCX",
     fullName: "SpaceExplorationTechnologiesCorp",
     displayName: "Space Exploration Technologies Corp",

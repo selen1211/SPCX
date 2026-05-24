@@ -17031,8 +17031,8 @@
     En = {
       ca: Sn,
       buyUrl: "https://app.uniswap.org/#/swap?inputCurrency=eth&outputCurrency=0x3821ee8f32f4e2e5e87f76e145e100352a291110",
-      xUrl: "https://x.com/spcx_erc",
-      tgURL : "https://t.me/spcx_portal",
+      xUrl: "https://x.com/spcx_erc20",
+      tgURL : "https://t.me/spcxoneth",
       ticker: "SPCX",
       fullName: "SpaceExplorationTechnologiesCorp",
       displayName: "Space Exploration Technologies Corp",
