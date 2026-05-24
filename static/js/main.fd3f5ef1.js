@@ -17027,10 +17027,10 @@
         },
       ],
     ]),
-    Sn = "0xa305132500ed57c0628f10989c46d03c01952889112dfdb7e882ad0602bfc89b",
+    Sn = "0xb4e48fa4f977162cddf612b6d76d4f9ff1d2791a",
     En = {
       ca: Sn,
-      buyUrl: "https://app.uniswap.org/#/swap?inputCurrency=eth&outputCurrency=0xa305132500ed57c0628f10989c46d03c01952889112dfdb7e882ad0602bfc89b",
+      buyUrl: "https://app.uniswap.org/#/swap?inputCurrency=eth&outputCurrency=0xb4e48fa4f977162cddf612b6d76d4f9ff1d2791a",
       xUrl: "https://x.com/spcx_erc",
       tgURL : "https://t.me/spcx_erc",
       ticker: "SPCX",
