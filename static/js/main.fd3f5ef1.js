@@ -17027,10 +17027,10 @@
         },
       ],
     ]),
-    Sn = "0xcomingsoon",
+    Sn = "0x3821ee8f32f4e2e5e87f76e145e100352a291110",
     En = {
       ca: Sn,
-      buyUrl: "https://app.uniswap.org/#/swap?inputCurrency=eth&outputCurrency=0xcomingsoon",
+      buyUrl: "https://app.uniswap.org/#/swap?inputCurrency=eth&outputCurrency=0x3821ee8f32f4e2e5e87f76e145e100352a291110",
       xUrl: "https://x.com/spcx_erc",
       tgURL : "https://t.me/spcx_portal",
       ticker: "SPCX",
