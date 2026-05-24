@@ -1,8 +1,8 @@
-const CA = "0xcomingsoon";
+const CA = "0xa305132500ed57c0628f10989c46d03c01952889112dfdb7e882ad0602bfc89b";
 
 export const SPCX_CONFIG = {
     ca: CA,
-    buyUrl: `https://app.uniswap.org/#/swap?inputCurrency=eth&outputCurrency=0xcomingsoon`,
+    buyUrl: `https://app.uniswap.org/#/swap?inputCurrency=eth&outputCurrency=0xa305132500ed57c0628f10989c46d03c01952889112dfdb7e882ad0602bfc89b`,
     xUrl: "https://x.com/spcx_erc",
     ticker: "SPCX",
     fullName: "SpaceExplorationTechnologiesCorp",
